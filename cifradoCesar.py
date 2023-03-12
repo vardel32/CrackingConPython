@@ -1,12 +1,21 @@
+import sys
 import pyperclip
-#casdena para cifrar/descifrar
-mensaje = 'f2? 81 3r552 38yt262 s8z2 ? 7262'
-#mensaje = 'Soy un perro pulgoso fumo y toso'
+#cadena para cifrar/descifrar
+print('Introduce el mensaje:\n')
+mensaje = input()
+
 #Clave para el cifrado/descifrado
-clave = 13
+print('Introduce la clave:')
+clave = int(input())
+
 #modo del programa
-modo = 'descifrar'
-#Establecer como 'encriptar' o 'desencriptar'
+print('Introduce el modo del programa:\n- cifrar\n- descifrar')
+modo = input()
+#Establecer como 'cifrar' o 'descifrar'
+if(modo != 'cifrar' or modo != 'descifrar'):
+    print('Modo de programa no valido.')
+    sys.exit()
+
 #Todos los posibles simbolos que se pueden descifrar
 simbolos = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!?.'
 #Se almacena de forma cifrada/descifrada el mensaje
@@ -31,7 +40,11 @@ for simbolo in mensaje:
     else:
         #Agregar simbolo sin cifrar/descifrar
         traducido = traducido + simbolo
+        
 #Se muestra la cadena traducido
-print('\nMensaje cifrado: '+mensaje+'\n')
-print('\nMensaje descifrado: '+traducido+'\n')
+print('\nMensaje: '+mensaje+'\n')
+if(modo == 'cifrar'):
+    print('\nMensaje cifrado: '+traducido+'\n')
+else:
+    print('\nMensaje descifrado: '+traducido+'\n')
 pyperclip.copy(traducido)
