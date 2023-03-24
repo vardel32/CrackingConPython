@@ -1,7 +1,7 @@
 import sys
 import pyperclip
 #cadena para cifrar/descifrar
-print('Introduce el mensaje:\n')
+print('\nIntroduce el mensaje:\n')
 mensaje = input()
 
 #Clave para el cifrado/descifrado
@@ -9,10 +9,10 @@ print('Introduce la clave:')
 clave = int(input())
 
 #modo del programa
-print('Introduce el modo del programa:\n- cifrar\n- descifrar')
-modo = input()
+print('Introduce el modo del programa eligiendo un numero:\n1- cifrar\n2- descifrar')
+modo = int(input())
 #Establecer como 'cifrar' o 'descifrar'
-if(modo != 'cifrar' or modo != 'descifrar'):
+if(modo != 1 and modo != 2):
     print('Modo de programa no valido.')
     sys.exit()
 
@@ -25,9 +25,9 @@ for simbolo in mensaje:
     if simbolo in simbolos:
         simboloIndice = simbolos.find(simbolo)
         #Se realiza el cifrado descifrado
-        if modo == 'cifrar':
+        if modo == 1:
             indiceTraducido = simboloIndice + clave
-        elif modo == 'descifrar':
+        elif modo == 2:
             indiceTraducido = simboloIndice - clave
 
         #Se maneja la envoltura
@@ -43,7 +43,7 @@ for simbolo in mensaje:
         
 #Se muestra la cadena traducido
 print('\nMensaje: '+mensaje+'\n')
-if(modo == 'cifrar'):
+if(modo == 1):
     print('\nMensaje cifrado: '+traducido+'\n')
 else:
     print('\nMensaje descifrado: '+traducido+'\n')
