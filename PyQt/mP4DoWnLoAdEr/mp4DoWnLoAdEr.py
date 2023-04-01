@@ -9,7 +9,7 @@ class MainApp(QMainWindow):
 
         # Se establece el tamanio de la ventana
         self.setFixedSize(300, 300)
-        self.setWindowTitle("mp3 DoWnLoAdEr")
+        self.setWindowTitle("mp4 DoWnLoAdEr")
 
         # Boton
         self.button = QPushButton("Descargar MP4", self)
